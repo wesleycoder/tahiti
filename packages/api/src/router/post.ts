@@ -3,13 +3,13 @@ import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "../trpc";
 
 export const postRouter = createTRPCRouter({
-  all: publicProcedure.query(({ ctx }) => {
-    return ctx.prisma.post.findMany({ orderBy: { id: "desc" } });
+  all: publicProcedure.query(({ ctx: _ }) => {
+    return [{ id: "1", title: "hello", content: "world" }];
   }),
   byId: publicProcedure
     .input(z.object({ id: z.string() }))
-    .query(({ ctx, input }) => {
-      return ctx.prisma.post.findFirst({ where: { id: input.id } });
+    .query(({ ctx: _, input }) => {
+      return { id: input.id, title: "hello", content: "world" };
     }),
   create: publicProcedure
     .input(
@@ -18,10 +18,10 @@ export const postRouter = createTRPCRouter({
         content: z.string().min(1),
       }),
     )
-    .mutation(({ ctx, input }) => {
-      return ctx.prisma.post.create({ data: input });
+    .mutation(({ ctx: _ctx, input: _input }) => {
+      return null;
     }),
-  delete: publicProcedure.input(z.string()).mutation(({ ctx, input }) => {
-    return ctx.prisma.post.delete({ where: { id: input } });
+  delete: publicProcedure.input(z.string()).mutation(({ ctx: _ctx, input: _input }) => {
+    return null;
   }),
 });
