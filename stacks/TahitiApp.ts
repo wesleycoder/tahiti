@@ -8,7 +8,7 @@ export function TahitiApp({ stack }: StackContext) {
   const site = new NextjsSite(stack, "tahiti-app", {
     bind: [bucket],
     path: "apps/tahiti",
-    buildCommand: "pnpm run build",
+    buildCommand: "turbo build",
   });
 
   stack.addOutputs({

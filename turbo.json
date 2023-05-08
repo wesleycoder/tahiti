@@ -8,7 +8,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", ".sst/**"]
+      "outputs": [".next/**", ".sst/**", ".open-next/**"]
     },
     "lint": {},
     "lint:fix": {},
