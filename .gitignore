@@ -13,10 +13,6 @@ coverage
 out/
 next-env.d.ts
 
-# expo
-.expo/
-dist/
-
 # production
 build
 
@@ -25,9 +21,6 @@ build
 *.pem
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
@@ -42,3 +35,13 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+# sst
+.sst
+.build
+
+# opennext
+.open-next
+
+# vscode
+.vscode

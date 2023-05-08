@@ -4,6 +4,7 @@
   "engines": {
     "node": ">=v18.16.0"
   },
+  "type": "module",
   "packageManager": "pnpm@8.4.0",
   "scripts": {
     "build": "turbo build",
@@ -13,7 +14,8 @@
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint:fix && manypkg fix",
-    "type-check": "turbo type-check"
+    "type-check": "turbo type-check",
+    "sst": "sst"
   },
   "dependencies": {
     "@platform-tahiti/eslint-config": "^0.1.0",
@@ -25,5 +27,12 @@
     "prettier-plugin-tailwindcss": "^0.2.8",
     "turbo": "^1.9.3",
     "typescript": "^5.0.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@tsconfig/node18": "^2.0.0",
+    "sst": "^2.8.7"
   }
 }
