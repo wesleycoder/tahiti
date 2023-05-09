@@ -1,6 +1,6 @@
-import { useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 
 import { api, type RouterOutputs } from "~/utils/api";
 

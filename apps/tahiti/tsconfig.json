@@ -10,6 +10,7 @@
   "exclude": [],
   "include": [
     "next-env.d.ts",
+    "sst-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",

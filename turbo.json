@@ -22,5 +22,5 @@
       "cache": false
     }
   },
-  "globalEnv": ["CI", "NODE_ENV", "SKIP_ENV_VALIDATION"]
+  "globalEnv": ["CI", "NODE_ENV", "SKIP_ENV_VALIDATION", "NEXT_PUBLIC_TAHITI_APP_URL"]
 }

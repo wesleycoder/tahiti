@@ -19,6 +19,7 @@ build
 # misc
 .DS_Store
 *.pem
+.autoenv.zsh
 
 # debug
 .pnpm-debug.log*

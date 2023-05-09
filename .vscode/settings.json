@@ -16,5 +16,6 @@
   "tailwindCSS.experimental.configFile": "./packages/config/tailwind/index.ts",
   "search.exclude": {
     "**/.sst": true
-  }
+  },
+  "dotenv.enableAutocloaking": false
 }

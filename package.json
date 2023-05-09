@@ -17,22 +17,15 @@
     "type-check": "turbo type-check",
     "sst": "sst"
   },
-  "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "@manypkg/cli": "^0.20.0",
-    "@platform-tahiti/eslint-config": "^0.1.0",
-    "@types/prettier": "^2.7.2",
-    "eslint": "^8.40.0",
-    "prettier": "^2.8.8",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+  "devDependencies": {
+    "@tsconfig/node18": "^2.0.0",
+    "aws-cdk-lib": "2.72.1",
+    "constructs": "10.1.156",
+    "sst": "2.8.12",
     "turbo": "^1.9.3",
     "typescript": "^5.0.4"
   },
   "workspaces": [
     "packages/*"
-  ],
-  "devDependencies": {
-    "@tsconfig/node18": "^2.0.0",
-    "sst": "^2.8.8"
-  }
+  ]
 }
