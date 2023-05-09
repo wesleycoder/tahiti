@@ -10,7 +10,9 @@ const config = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   webpack(config) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     config.experiments = { ...config.experiments, topLevelAwait: true }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return config
   },
 };
