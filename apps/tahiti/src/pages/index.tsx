@@ -2,12 +2,31 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useState } from "react";
 
+import { wind$ } from "@platform-tahiti/ui/wind";
+
 import { api, type RouterOutputs } from "~/utils/api";
+
+const deleteButton = wind$("default", "disabled")(
+  {
+    cursor: "cursor-pointer",
+    fontSize: "text-sm",
+    fontWeight: "font-bold",
+    textTransform: "uppercase",
+    color: "text-pink-400",
+  },
+  {
+    default: {},
+    disabled: {
+      backgroundColor: "bg-gray-400",
+    },
+  },
+);
 
 const PostCard: React.FC<{
   post: RouterOutputs["post"]["all"][number];
+  isDeleting: boolean;
   onPostDelete?: () => void;
-}> = ({ post, onPostDelete }) => {
+}> = ({ post, isDeleting, onPostDelete }) => {
   return (
     <div className="flex flex-row rounded-lg bg-white/10 p-4 transition-all hover:scale-[101%]">
       <div className="flex-grow">
@@ -16,7 +35,7 @@ const PostCard: React.FC<{
       </div>
       <div>
         <span
-          className="cursor-pointer text-sm font-bold uppercase text-pink-400"
+          className={deleteButton.class(isDeleting ? "disabled" : "default")}
           onClick={onPostDelete}
         >
           Delete
@@ -113,6 +132,7 @@ const Home: NextPage = () => {
                         <PostCard
                           key={p.id}
                           post={p}
+                          isDeleting={deletePostMutation.isLoading}
                           onPostDelete={() => deletePostMutation.mutate(p.id)}
                         />
                       );

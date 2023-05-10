@@ -17,5 +17,6 @@
   "search.exclude": {
     "**/.sst": true
   },
-  "dotenv.enableAutocloaking": false
+  "dotenv.enableAutocloaking": false,
+  "editor.formatOnPaste": false
 }

@@ -1,9 +1,21 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const colors = {
+  primary: "#ff0000",
+  secondary: "#00ff00",
+  tertiary: "#0000ff",
+} as const;
+
+export type Colors = typeof colors;
+
+const config = {
   content: [""],
   theme: {
-    extend: {},
+    extend: {
+      colors,
+    },
   },
   plugins: [],
 } satisfies Config;
+
+export default config;
